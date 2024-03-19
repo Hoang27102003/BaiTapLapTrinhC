@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+int KiemTraSoChinhPhuong(int n) {
+    int canBac2 = sqrt(n);
+    return canBac2 * canBac2 == n;
+}
+
+void DemSoChinhPhuong(int n) {
+    printf("Cac so chinh phuong nho hon %d:\n", n);
+
+    for (int i = 0; i < n; i++) {
+        if (KiemTraSoChinhPhuong(i)) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+}
+
+int main() {
+    int n;
+
+    printf("Nhap vao mot so nguyen duong: ");
+    scanf("%d", &n);
+
+    DemSoChinhPhuong(n);
+
+    return 0;
+}
